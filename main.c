@@ -139,7 +139,7 @@ int main(){
         //Measure the time and the number of nodes visited
         clock_gettime(CLOCK_MONOTONIC, &t1);
         for(long i=0;i<10000;i++){
-            long random_key = get_item(search_array, i);
+            long random_key = get_item(input_array,get_item(search_array, i));
             // printf("Searching for key: %ld\n", random_key);
             search(random_key, node_tree);
             nodes_visited_list_n[i] = get_nodes_visited();
@@ -148,7 +148,7 @@ int main(){
 
         clock_gettime(CLOCK_MONOTONIC, &t3);
         for(long i=0;i<10000;i++){
-            long random_key = get_item(search_array, i);
+            long random_key = get_item(input_array,get_item(search_array, i));
             // printf("Searching for key: %ld\n", random_key);
             nodes_visited_list_l[i] = find_leaf(leaf_tree, random_key);
         }

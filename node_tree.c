@@ -29,6 +29,7 @@ node * node_set(){
 
 int32_t contains_rec(int32_t val, node * n){
     if(n == NULL){
+        // printf("Value %d not found in the tree.\n", val);
         return 0;
     }
     if(n->value == val){
